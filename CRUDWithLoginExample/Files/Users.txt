@@ -1,0 +1,8 @@
+ad,ad,True
+us,us,False
+q,q,False
+awa,awa,True
+er,er,True
+ra,ra,True
+lo,lo,False
+
