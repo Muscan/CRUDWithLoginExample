@@ -86,9 +86,9 @@ namespace CRUDWithLoginExample.Forms
             this.checkBoxIsAdmin.AutoSize = true;
             this.checkBoxIsAdmin.Location = new System.Drawing.Point(294, 217);
             this.checkBoxIsAdmin.Name = "checkBoxIsAdmin";
-            this.checkBoxIsAdmin.Size = new System.Drawing.Size(101, 24);
+            this.checkBoxIsAdmin.Size = new System.Drawing.Size(89, 24);
             this.checkBoxIsAdmin.TabIndex = 5;
-            this.checkBoxIsAdmin.Text = "checkBox1";
+            this.checkBoxIsAdmin.Text = "Is Admin";
             this.checkBoxIsAdmin.UseVisualStyleBackColor = true;
             // 
             // btnLogin

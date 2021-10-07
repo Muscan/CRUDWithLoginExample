@@ -30,6 +30,7 @@ namespace CRUDWithLoginExample.Forms
             RegisterForm register = new RegisterForm();
             register.Show();
             control.AfisareUsers(lstUsers);
+
         }
 
         private void btnPrintAllUsers_Click(object sender, EventArgs e)
@@ -74,12 +75,14 @@ namespace CRUDWithLoginExample.Forms
                 string editUser = txtBoxEditName.Text;
                 string editPassword = txtBoxEditPassword.Text;
                 bool isAdmin = checkBoxEditIsAdmin.Checked;
+                string newName = txtBoxNewName.Text;
+                string newPassword = txtBoxNewPassword.Text;
 
                 User usr = new User(editUser, editPassword, isAdmin);
 
-                control.updateUser(usr);
+                control.updateUser(usr, newName, newPassword);
                 control.AfisareUsers(lstUsers);
-                ClearLoginFields(txtBoxEditName, txtBoxEditPassword);
+                Clear4Fields(txtBoxEditName, txtBoxEditPassword, txtBoxNewName, txtBoxNewPassword);
                 checkBoxEditIsAdmin.Checked = false;
 
 
@@ -89,6 +92,19 @@ namespace CRUDWithLoginExample.Forms
         private void btnSignOut_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtBoxNewName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClearFields_Click(object sender, EventArgs e)
+        {
+            Clear4Fields(txtBoxEditName, txtBoxEditPassword, txtBoxNewName, txtBoxNewPassword);
+            checkBoxEditIsAdmin.Checked = false;
+            Clear1Field(txtBoxDeleteUser);
+            control.ClearUsers(lstUsers);
         }
     }
 }

@@ -1,8 +1,4 @@
-ad,ad,True
-us,us,False
-q,q,False
-awa,awa,True
-er,er,True
-ra,ra,True
-lo,lo,False
+admin,admin,True
+user,user,False
+admin1,admin1,True
 

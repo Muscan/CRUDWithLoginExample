@@ -43,16 +43,21 @@ namespace CRUDWithLoginExample.Controller
         }
 
         //update User, pw and isAdmin
-        public bool updateUser(User user)
+        //it searches for the old user, it searches and check if the password match also
+        public bool updateUser(User user, string newName, string newPassword)
         {
             int index = userIndex(user.getUser());
-            if (index != -1)
+            if (index != -1) //check if the user does not exists in the list 
             {
-                users[index].setUser(user.getUser());
-                users[index].setPassword(user.getPassword());
-                users[index].setIsAdmin(user.getIsAdmin());
-                saveToFileUserTxt();
-                return true;
+                if(users[index].getPassword() == user.getPassword())
+                {
+                    users[index].setUser(newName);
+                    users[index].setPassword(newPassword);
+                    users[index].setIsAdmin(user.getIsAdmin());
+                    saveToFileUserTxt();
+                    return true;
+                }
+                MessageBox.Show("Password not match for the user");
             }
             MessageBox.Show("User not found.");
             return false;
@@ -148,6 +153,11 @@ namespace CRUDWithLoginExample.Controller
                 linie.SubItems.Add(users[i].getIsAdmin().ToString());
                 listUsers.Items.Add(linie);
             }
+        }
+
+        public void ClearUsers(ListView listUsers)
+        {
+            listUsers.Clear();
         }
     }
 }

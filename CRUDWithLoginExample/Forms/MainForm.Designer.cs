@@ -40,6 +40,13 @@ namespace CRUDWithLoginExample.Forms
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.txtBoxDeleteUser = new System.Windows.Forms.TextBox();
             this.btnSignOut = new System.Windows.Forms.Button();
+            this.lblOldName = new System.Windows.Forms.Label();
+            this.lblNewName = new System.Windows.Forms.Label();
+            this.lblOldPassword = new System.Windows.Forms.Label();
+            this.lblNewPassword = new System.Windows.Forms.Label();
+            this.txtBoxNewName = new System.Windows.Forms.TextBox();
+            this.txtBoxNewPassword = new System.Windows.Forms.TextBox();
+            this.btnClearFields = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstUsers
@@ -76,7 +83,7 @@ namespace CRUDWithLoginExample.Forms
             // 
             // btnEditUser
             // 
-            this.btnEditUser.Location = new System.Drawing.Point(405, 66);
+            this.btnEditUser.Location = new System.Drawing.Point(502, 12);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(94, 29);
             this.btnEditUser.TabIndex = 6;
@@ -86,14 +93,14 @@ namespace CRUDWithLoginExample.Forms
             // 
             // txtBoxEditName
             // 
-            this.txtBoxEditName.Location = new System.Drawing.Point(405, 119);
+            this.txtBoxEditName.Location = new System.Drawing.Point(502, 68);
             this.txtBoxEditName.Name = "txtBoxEditName";
             this.txtBoxEditName.Size = new System.Drawing.Size(125, 27);
             this.txtBoxEditName.TabIndex = 7;
             // 
             // txtBoxEditPassword
             // 
-            this.txtBoxEditPassword.Location = new System.Drawing.Point(549, 119);
+            this.txtBoxEditPassword.Location = new System.Drawing.Point(502, 119);
             this.txtBoxEditPassword.Name = "txtBoxEditPassword";
             this.txtBoxEditPassword.Size = new System.Drawing.Size(125, 27);
             this.txtBoxEditPassword.TabIndex = 8;
@@ -101,7 +108,7 @@ namespace CRUDWithLoginExample.Forms
             // checkBoxEditIsAdmin
             // 
             this.checkBoxEditIsAdmin.AutoSize = true;
-            this.checkBoxEditIsAdmin.Location = new System.Drawing.Point(692, 119);
+            this.checkBoxEditIsAdmin.Location = new System.Drawing.Point(629, 17);
             this.checkBoxEditIsAdmin.Name = "checkBoxEditIsAdmin";
             this.checkBoxEditIsAdmin.Size = new System.Drawing.Size(75, 24);
             this.checkBoxEditIsAdmin.TabIndex = 9;
@@ -110,7 +117,7 @@ namespace CRUDWithLoginExample.Forms
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Location = new System.Drawing.Point(405, 211);
+            this.btnDeleteUser.Location = new System.Drawing.Point(502, 212);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(94, 29);
             this.btnDeleteUser.TabIndex = 10;
@@ -120,26 +127,94 @@ namespace CRUDWithLoginExample.Forms
             // 
             // txtBoxDeleteUser
             // 
-            this.txtBoxDeleteUser.Location = new System.Drawing.Point(549, 213);
+            this.txtBoxDeleteUser.Location = new System.Drawing.Point(643, 212);
             this.txtBoxDeleteUser.Name = "txtBoxDeleteUser";
             this.txtBoxDeleteUser.Size = new System.Drawing.Size(125, 27);
             this.txtBoxDeleteUser.TabIndex = 11;
             // 
             // btnSignOut
             // 
-            this.btnSignOut.Location = new System.Drawing.Point(405, 329);
+            this.btnSignOut.Location = new System.Drawing.Point(643, 382);
             this.btnSignOut.Name = "btnSignOut";
-            this.btnSignOut.Size = new System.Drawing.Size(94, 29);
+            this.btnSignOut.Size = new System.Drawing.Size(125, 29);
             this.btnSignOut.TabIndex = 12;
             this.btnSignOut.Text = "Sign Out";
             this.btnSignOut.UseVisualStyleBackColor = true;
             this.btnSignOut.Click += new System.EventHandler(this.btnSignOut_Click);
+            // 
+            // lblOldName
+            // 
+            this.lblOldName.AutoSize = true;
+            this.lblOldName.Location = new System.Drawing.Point(502, 44);
+            this.lblOldName.Name = "lblOldName";
+            this.lblOldName.Size = new System.Drawing.Size(77, 20);
+            this.lblOldName.TabIndex = 13;
+            this.lblOldName.Text = "Old Name";
+            // 
+            // lblNewName
+            // 
+            this.lblNewName.AutoSize = true;
+            this.lblNewName.Location = new System.Drawing.Point(643, 44);
+            this.lblNewName.Name = "lblNewName";
+            this.lblNewName.Size = new System.Drawing.Size(83, 20);
+            this.lblNewName.TabIndex = 14;
+            this.lblNewName.Text = "New Name";
+            // 
+            // lblOldPassword
+            // 
+            this.lblOldPassword.AutoSize = true;
+            this.lblOldPassword.Location = new System.Drawing.Point(502, 96);
+            this.lblOldPassword.Name = "lblOldPassword";
+            this.lblOldPassword.Size = new System.Drawing.Size(98, 20);
+            this.lblOldPassword.TabIndex = 15;
+            this.lblOldPassword.Text = "Old Password";
+            // 
+            // lblNewPassword
+            // 
+            this.lblNewPassword.AutoSize = true;
+            this.lblNewPassword.Location = new System.Drawing.Point(643, 98);
+            this.lblNewPassword.Name = "lblNewPassword";
+            this.lblNewPassword.Size = new System.Drawing.Size(104, 20);
+            this.lblNewPassword.TabIndex = 16;
+            this.lblNewPassword.Text = "New Password";
+            // 
+            // txtBoxNewName
+            // 
+            this.txtBoxNewName.Location = new System.Drawing.Point(643, 67);
+            this.txtBoxNewName.Name = "txtBoxNewName";
+            this.txtBoxNewName.Size = new System.Drawing.Size(125, 27);
+            this.txtBoxNewName.TabIndex = 17;
+            this.txtBoxNewName.TextChanged += new System.EventHandler(this.txtBoxNewName_TextChanged);
+            // 
+            // txtBoxNewPassword
+            // 
+            this.txtBoxNewPassword.Location = new System.Drawing.Point(643, 119);
+            this.txtBoxNewPassword.Name = "txtBoxNewPassword";
+            this.txtBoxNewPassword.Size = new System.Drawing.Size(125, 27);
+            this.txtBoxNewPassword.TabIndex = 18;
+            // 
+            // btnClearFields
+            // 
+            this.btnClearFields.Location = new System.Drawing.Point(502, 381);
+            this.btnClearFields.Name = "btnClearFields";
+            this.btnClearFields.Size = new System.Drawing.Size(94, 29);
+            this.btnClearFields.TabIndex = 19;
+            this.btnClearFields.Text = "Clear Fields";
+            this.btnClearFields.UseVisualStyleBackColor = true;
+            this.btnClearFields.Click += new System.EventHandler(this.btnClearFields_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 450);
+            this.Controls.Add(this.btnClearFields);
+            this.Controls.Add(this.txtBoxNewPassword);
+            this.Controls.Add(this.txtBoxNewName);
+            this.Controls.Add(this.lblNewPassword);
+            this.Controls.Add(this.lblOldPassword);
+            this.Controls.Add(this.lblNewName);
+            this.Controls.Add(this.lblOldName);
             this.Controls.Add(this.btnSignOut);
             this.Controls.Add(this.txtBoxDeleteUser);
             this.Controls.Add(this.btnDeleteUser);
@@ -171,5 +246,12 @@ namespace CRUDWithLoginExample.Forms
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.TextBox txtBoxDeleteUser;
         private System.Windows.Forms.Button btnSignOut;
+        private System.Windows.Forms.Label lblOldName;
+        private System.Windows.Forms.Label lblNewName;
+        private System.Windows.Forms.Label lblOldPassword;
+        private System.Windows.Forms.Label lblNewPassword;
+        private System.Windows.Forms.TextBox txtBoxNewName;
+        private System.Windows.Forms.TextBox txtBoxNewPassword;
+        private System.Windows.Forms.Button btnClearFields;
     }
 }

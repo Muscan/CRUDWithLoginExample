@@ -18,22 +18,18 @@ namespace CRUDWithLoginExample.Utils
             MessageBox.Show("Mandatory: " + field);
         }
 
-        public static void ClearFields(TextBox txt1, TextBox txt2, TextBox txt3, TextBox txt4, TextBox txt5)
+        public static void Clear4Fields(TextBox txt1, TextBox txt2, TextBox txt3, TextBox txt4)
         {
             txt1.Clear();
             txt2.Clear();
             txt3.Clear();
             txt4.Clear();
-            txt5.Clear();
+          
         }
 
-        public static void ClearLoginFields(TextBox txt1, TextBox txt2)
+        public static void Clear1Field(TextBox txt1)
         {
             txt1.Clear();
-            txt2.Clear();
-
         }
-
-
     }
 }

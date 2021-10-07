@@ -63,7 +63,11 @@ namespace CRUDWithLoginExample.Forms
                 {
                     MessageBox.Show("Login does not work, user is admin or does not exist");
                 }
+
             }
+            Clear1Field(txtBoxUserName);
+            Clear1Field(txtBoxPassword);
+            checkBoxIsAdmin.Checked = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

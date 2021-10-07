@@ -34,7 +34,7 @@ namespace CRUDWithLoginExample.Forms
             {
                 RegisterForm registerForm = new RegisterForm();
                 frmMain frm = new frmMain();
-
+                
                 string registerUser = txtBoxName.Text;
                 string registerPassword = txtBoxPassword.Text;
                 bool admin = checkBoxIsAdmin.Checked;
