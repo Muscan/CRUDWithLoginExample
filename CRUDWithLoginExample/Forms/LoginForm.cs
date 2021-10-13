@@ -14,8 +14,10 @@ namespace CRUDWithLoginExample.Forms
     public partial class LoginForm : Form
     {
         private ControllerUser control;
+        public static string name, pass;
         public LoginForm()
         {
+
             InitializeComponent();
             this.control = new ControllerUser();
         }
@@ -34,9 +36,9 @@ namespace CRUDWithLoginExample.Forms
             {
                 LoginForm loginForm = new LoginForm();
 
-                string name = txtBoxUserName.Text;
+                name = txtBoxUserName.Text;
 
-                string pass = txtBoxPassword.Text;
+                pass = txtBoxPassword.Text;
 
 
 

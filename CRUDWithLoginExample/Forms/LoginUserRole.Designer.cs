@@ -57,6 +57,7 @@ namespace CRUDWithLoginExample.Forms
             this.lblUser.Size = new System.Drawing.Size(80, 20);
             this.lblUser.TabIndex = 4;
             this.lblUser.Text = "Welcome...";
+            this.lblUser.Click += new System.EventHandler(this.lblUser_Click);
             // 
             // btnEditLoggedUser
             // 

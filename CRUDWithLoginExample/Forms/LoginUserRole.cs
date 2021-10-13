@@ -17,6 +17,8 @@ namespace CRUDWithLoginExample.Forms
         public LoginUserRole()
         {
             InitializeComponent();
+            //display the name of the logged user
+            lblUser.Text = "Welcome, " + LoginForm.name + "!";
         }
 
         private void btnSignOut_Click(object sender, EventArgs e)
@@ -41,7 +43,13 @@ namespace CRUDWithLoginExample.Forms
             {
                 string updateName = txtBoxNewName.Text;
                 string updatePassword = txtBoxNewPassword.Text;
-                //save and check with the logged user. TBD
+                //Params for the object userRole are token from the Main Login form. 
+                User userRole = new User(LoginForm.name, LoginForm.pass);
+                control.updateUser(userRole, updateName, updatePassword);
+                Clear2Fields(txtBoxNewName, txtBoxNewPassword);
+                MessageBox.Show("Name: \""+updateName+"\" and Password: \"" + updatePassword+ "\" were updated.\n"+ "You will be signed out!");
+                this.Close();
+
             }
         }
 
@@ -49,6 +57,11 @@ namespace CRUDWithLoginExample.Forms
         {
             Clear1Field(txtBoxNewName);
             Clear1Field(txtBoxNewPassword);
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

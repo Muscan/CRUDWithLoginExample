@@ -22,6 +22,12 @@ namespace CRUDWithLoginExample.Classes
             this.isAdmin = isAdmin;
 
         }
+        //constructor for user Role(it uses the isAdmin value which equals to false by default
+        public User(string user, string password)
+        {
+            this.user = user;
+            this.password = password;
+        }
  
         public String getUser()
         {

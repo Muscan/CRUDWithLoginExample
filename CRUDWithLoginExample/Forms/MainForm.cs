@@ -48,8 +48,14 @@ namespace CRUDWithLoginExample.Forms
             {
                 control.DeleteUser(txtBoxDeleteUser.Text);
                 control.AfisareUsers(lstUsers);
+                
+                //check if the deleted user is the one logged in, user is signed out 
+                if(LoginForm.name.Equals(txtBoxDeleteUser.Text))
+                {
+                    this.Close();
+                }
+                //Cleans the fields in the text box Delete User
                 txtBoxDeleteUser.Clear();
-
             }
         }
 
@@ -79,8 +85,15 @@ namespace CRUDWithLoginExample.Forms
                 string newPassword = txtBoxNewPassword.Text;
 
                 User usr = new User(editUser, editPassword, isAdmin);
-
+                MessageBox.Show("New user: \"" + newName + "\"\nNew Password: \"" + newPassword + "\"\nIs admin:" + isAdmin); 
                 control.updateUser(usr, newName, newPassword);
+                if (LoginForm.name.Equals(txtBoxEditName.Text))
+                {
+
+                    MessageBox.Show("You will be signed out!");
+                    this.Close();
+
+                }
                 control.AfisareUsers(lstUsers);
                 Clear4Fields(txtBoxEditName, txtBoxEditPassword, txtBoxNewName, txtBoxNewPassword);
                 checkBoxEditIsAdmin.Checked = false;
@@ -104,7 +117,7 @@ namespace CRUDWithLoginExample.Forms
             Clear4Fields(txtBoxEditName, txtBoxEditPassword, txtBoxNewName, txtBoxNewPassword);
             checkBoxEditIsAdmin.Checked = false;
             Clear1Field(txtBoxDeleteUser);
-            control.ClearUsers(lstUsers);
+
         }
     }
 }

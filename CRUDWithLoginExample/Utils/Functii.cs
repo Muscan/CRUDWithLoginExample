@@ -17,6 +17,17 @@ namespace CRUDWithLoginExample.Utils
         {
             MessageBox.Show("Mandatory: " + field);
         }
+        public static void Clear1Field(TextBox txt1)
+        {
+            txt1.Clear();
+        }
+
+        public static void Clear2Fields(TextBox txt1, TextBox txt2)
+
+        {
+            txt1.Clear();
+            txt2.Clear();
+        }
 
         public static void Clear4Fields(TextBox txt1, TextBox txt2, TextBox txt3, TextBox txt4)
         {
@@ -27,9 +38,6 @@ namespace CRUDWithLoginExample.Utils
           
         }
 
-        public static void Clear1Field(TextBox txt1)
-        {
-            txt1.Clear();
-        }
+        
     }
 }

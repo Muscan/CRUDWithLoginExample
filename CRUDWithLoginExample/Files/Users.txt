@@ -1,4 +1,4 @@
+b,b,True
+adm,adm,True
 admin,admin,True
-user,user,False
-admin1,admin1,True
 
